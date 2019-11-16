@@ -11,16 +11,6 @@ async function doDbExample() {
 	    database: "test",
 	    entities: [__dirname + "/entity/*{.js,.ts}"],
 	    synchronize: true
-	}, {
-	    name: "db2Connection",
-	    type: "postgres",
-	    host: "db",
-	    port: 5432,
-	    username: "test",
-	    password: "testPassword",
-	    database: "database2",
-	    entities: [__dirname + "/entity/*{.js,.ts}"],
-	    synchronize: true
 	}]);
 
 	console.log("Created connections")
