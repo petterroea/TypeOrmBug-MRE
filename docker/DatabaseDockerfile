@@ -1,4 +1,6 @@
-FROM postgres:latest
+# Postgres 12 doesn't work with TypeORM.
+# See https://github.com/typeorm/typeorm/issues/4573
+FROM postgres:11
 
 # Custom initialization scripts
 COPY ./add_multiple_db.sh   /docker-entrypoint-initdb.d/10-add_multiple_db.sh

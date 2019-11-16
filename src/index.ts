@@ -4,8 +4,8 @@ async function doDbExample() {
 	const connections = await createConnections([{
 	    name: "db1Connection",
 	    type: "postgres",
-	    host: "localhost",
-	    port: 3306,
+	    host: "db",
+	    port: 5432,
 	    username: "test",
 	    password: "testPassword",
 	    database: "test",
@@ -14,14 +14,16 @@ async function doDbExample() {
 	}, {
 	    name: "db2Connection",
 	    type: "postgres",
-	    host: "localhost",
-	    port: 3306,
+	    host: "db",
+	    port: 5432,
 	    username: "test",
 	    password: "testPassword",
 	    database: "database2",
 	    entities: [__dirname + "/entity/*{.js,.ts}"],
 	    synchronize: true
 	}]);
+
+	console.log("Created connections")
 }
 console.log("Hello, world!")
 
