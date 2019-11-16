@@ -1,0 +1,17 @@
+{
+  "name": "TypeormDbBugRepro",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc --strictNullChecks",
+    "dev": "ts-node-dev --respawn ./src/index.ts"
+  },
+  "dependencies": {
+    "@types/node": "^12.12.8",
+    "reflect-metadata": "^0.1.13",
+    "ts-node-dev": "^1.0.0-pre.44",
+    "typeorm": "^0.2.20",
+    "typescript": "^3.7.2"
+  }
+}

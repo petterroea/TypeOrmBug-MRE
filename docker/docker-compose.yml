@@ -1,0 +1,27 @@
+version: '2'
+services:
+  db:
+    build:
+      context: .
+      dockerfile: DatabaseDockerfile
+    restart: always
+    environment:
+      POSTGRES_MULTIPLE_DATABASES: "database2"
+      POSTGRES_PASSWORD: testPassword
+      POSTGRES_USER: test
+    volumes:
+      - ./postgres-data:/var/lib/postgresql/data
+  adminer:
+    links:
+      - db
+    image: adminer
+    ports:
+      - 3739:8080
+  server:
+    links:
+      - db
+    build:
+      context: .
+      dockerfile: Server
+    volumes:
+      - ../:/srv/testProgram
